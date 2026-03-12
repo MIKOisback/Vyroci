@@ -5,7 +5,6 @@
 <title>Naše výročí</title>
 
 <style>
-
 body{
 margin:0;
 height:100vh;
@@ -68,22 +67,35 @@ text-align:left;
 padding:20px;
 }
 
-/* levý horní */
+/* levý horní textový rámeček */
 .leftbox{
 top:539px;
 left:90px;
 }
 
-/* pravý střed */
+/* pravý střední rámeček */
 .rightbox{
 top:957px;
 left:560px;
 }
 
-/* spodní levý */
+/* spodní levý rámeček */
 .bottombox{
 top:1419px;
 left:90px;
+}
+
+/* ---------- KLIKACÍ OBLAST NA IKONU STRATEGIE ---------- */
+
+.strategy-link{
+position:absolute;
+left:715px;
+top:1615px;
+width:155px;
+height:165px;
+z-index:30;
+display:block;
+background:transparent;
 }
 
 /* ---------- KONFETY ---------- */
@@ -134,38 +146,6 @@ to{
 transform:translateY(380px) rotate(720deg);
 }
 }
-
-/* ---------- KLIKACÍ OBLASTI ---------- */
-
-.linkarea{
-position:absolute;
-display:block;
-}
-
-/* strategie / plánování */
-.link-strategy{
-top:1480px;
-left:650px;
-width:120px;
-height:120px;
-}
-
-/* filmová klapka */
-.link-film{
-top:1340px;
-left:820px;
-width:140px;
-height:120px;
-}
-
-/* herní ovladač */
-.link-game{
-top:1580px;
-left:840px;
-width:150px;
-height:120px;
-}
-
 </style>
 </head>
 
@@ -196,51 +176,36 @@ Teď si prosím pusť video a poté se vrhneme na naše online rande.<br><br>
 K tomu nám pomohou ikonky, které máš vpravo.
 </div>
 
-<!-- KLIKACÍ IKONY -->
-
-<a class="linkarea link-strategy" href="https://episkvorky.cz/" target="_blank"></a>
-
-<a class="linkarea link-film" href="https://photos.app.goo.gl/bzKgfi5wFfPfr5Gt7" target="_blank"></a>
-
-<a class="linkarea link-game" href="https://www.crazygames.com/cz/multiplayer/2?tab=with-friends" target="_blank"></a>
+<a
+class="strategy-link"
+href="https://episkvorky.cz/"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Otevřít strategickou hru">
+</a>
 
 </div>
 
 <script>
-
-/* BARVY KONFET */
-
 const colors=["#ff4d4d","#ffd24d","#4da6ff","#66ff66","#ff66cc"];
-
 const hero=document.getElementById("hero");
 
-/* KONFETY */
-
 for(let i=0;i<70;i++){
-
 const confetti=document.createElement("div");
-
 confetti.className="confetti";
 confetti.style.left=Math.random()*100+"%";
 confetti.style.backgroundColor=colors[Math.floor(Math.random()*colors.length)];
 confetti.style.animationDuration=(3+Math.random()*4)+"s";
-
 hero.appendChild(confetti);
 }
 
-/* SRDÍČKA */
-
 for(let i=0;i<25;i++){
-
 const heart=document.createElement("div");
-
 heart.className="heart";
 heart.style.left=Math.random()*100+"%";
 heart.style.animationDuration=(4+Math.random()*4)+"s";
-
 hero.appendChild(heart);
 }
-
 </script>
 
 </body>
