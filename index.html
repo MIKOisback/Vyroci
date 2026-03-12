@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>Naše výročí</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+background:#000;
+font-family:"Comic Sans MS", cursive;
+}
+
+.page{
+position:relative;
+width:1080px;
+height:1920px;
+background-image:url("pozadi.jpg");
+background-size:cover;
+background-position:center;
+}
+
+/* ---------- HORNÍ ANIMAČNÍ RÁMEČEK ---------- */
+
+.hero{
+position:absolute;
+top:60px;
+left:70px;
+width:940px;
+height:350px;
+overflow:hidden;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+color:#FDE0D2;
+font-size:40px;
+-webkit-text-stroke:2px rgba(225,134,112,0.58);
+margin:0;
+}
+
+.hero h2{
+color:#FDE0D2;
+font-style:italic;
+font-size:28px;
+-webkit-text-stroke:1px rgba(225,134,112,0.58);
+margin:10px 0 0 0;
+}
+
+/* ---------- TEXTOVÉ BLOKY ---------- */
+
+.textbox{
+position:absolute;
+width:420px;
+color:white;
+font-size:18px;
+line-height:1.4;
+text-align:left;
+}
+
+/* levý střed */
+.leftbox{
+top:520px;
+left:90px;
+}
+
+/* pravý střed */
+.rightbox{
+top:900px;
+left:560px;
+}
+
+/* spodní levý */
+.bottombox{
+top:1400px;
+left:90px;
+}
+
+/* ---------- KONFETY ---------- */
+
+.confetti{
+position:absolute;
+width:6px;
+height:18px;
+border-radius:3px;
+top:-20px;
+animation:fall linear infinite;
+}
+
+/* ---------- SRDÍČKA ---------- */
+
+.heart{
+position:absolute;
+width:18px;
+height:18px;
+background:#ff4da6;
+transform:rotate(45deg);
+top:-20px;
+animation:fall linear infinite;
+}
+
+.heart:before,
+.heart:after{
+content:"";
+position:absolute;
+width:18px;
+height:18px;
+background:#ff4da6;
+border-radius:50%;
+}
+
+.heart:before{
+top:-9px;
+left:0;
+}
+
+.heart:after{
+left:-9px;
+top:0;
+}
+
+@keyframes fall{
+to{
+transform:translateY(380px) rotate(720deg);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<div class="hero" id="hero">
+<h1>Oslava našeho druhého výročí začíná</h1>
+<h2>Miluji tě</h2>
+</div>
+
+<div class="textbox leftbox">
+Za poslední rok jsme toho spoustu zažili. Z toho nejdůležitějšího bych vyzvidla, že jsme začali plánovat společné bydlení - hledali jsme spolešné cesty a otestovali naši spolupráci a zda jsme schopní se shodnout nebo najít kompromis přo plánování bydlení. Zatím to vypadá, že se nám to celkem daří, za což jsem ráda. <br><br>
+Vyzkoušeli si nové kreativní aktivity, hodně jsme si povídali a taky jsme si ukázali, že se o sebe postáráme nejen ve zdraví, ale i v nemoci.
+</div>
+
+<div class="textbox rightbox">
+Taky jsme spoustu podnikli spoustu výletů. Navštívili jsme vopodády, dovolenou strávili na Šumavě s výlety po okolí, ťapkali jsme Prahou. Vyrazili jsme klasicky i za historií a uměním, navšívili jsme například krásnou světelnou výstavu Signal Space - a to teda bylo wow.<br><br>
+Každopádně k tomu máme i video.
+</div>
+
+<div class="textbox bottombox">
+Teď si prosím pusť video a poté se vrhneme na naše online rande.<br><br>
+K tomu nám pomohou ikonky, které máš vpravo.
+</div>
+
+</div>
+
+<script>
+
+/* KONFETY BARVY */
+
+const colors=["#ff4d4d","#ffd24d","#4da6ff","#66ff66","#ff66cc"];
+
+const hero=document.getElementById("hero");
+
+/* KONFETY */
+
+for(let i=0;i<70;i++){
+
+const confetti=document.createElement("div");
+
+confetti.className="confetti";
+confetti.style.left=Math.random()*100+"%";
+confetti.style.backgroundColor=colors[Math.floor(Math.random()*colors.length)];
+confetti.style.animationDuration=(3+Math.random()*4)+"s";
+
+hero.appendChild(confetti);
+}
+
+/* SRDÍČKA */
+
+for(let i=0;i<25;i++){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+heart.style.left=Math.random()*100+"%";
+heart.style.animationDuration=(4+Math.random()*4)+"s";
+
+hero.appendChild(heart);
+}
+
+</script>
+
+</body>
+</html>
