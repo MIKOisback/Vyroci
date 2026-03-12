@@ -96,7 +96,6 @@ width:155px;
 height:165px;
 z-index:30;
 display:block;
-background:transparent;
 }
 
 /* ---------- PROKLIK HERNÍ OVLADAČ ---------- */
@@ -109,7 +108,18 @@ width:150px;
 height:120px;
 z-index:30;
 display:block;
-background:transparent;
+}
+
+/* ---------- PROKLIK FILMOVÁ KLAPKA ---------- */
+
+.video-link{
+position:absolute;
+left:840px;
+top:1540px;
+width:180px;
+height:120px;
+z-index:30;
+display:block;
 }
 
 /* ---------- KONFETY ---------- */
@@ -175,24 +185,20 @@ transform:translateY(380px) rotate(720deg);
 
 <div class="textbox leftbox">
 Za poslední rok jsme toho spoustu zažili. Z toho nejdůležitějšího bych vyzvidla, že jsme začali plánovat společné bydlení - hledali jsme spolešné cesty a otestovali naši spolupráci a zda jsme schopní se shodnout nebo najít kompromis přo plánování bydlení. Zatím to vypadá, že se nám to celkem daří, za což jsem ráda.<br><br>
-
 Vyzkoušeli si nové kreativní aktivity, hodně jsme si povídali a taky jsme si ukázali, že se o sebe postáráme nejen ve zdraví, ale i v nemoci.
 </div>
 
 <div class="textbox rightbox">
 Taky jsme spoustu podnikli spoustu výletů. Navštívili jsme vopodády, dovolenou strávili na Šumavě s výlety po okolí, ťapkali jsme Prahou. Vyrazili jsme klasicky i za historií a uměním, navšívili jsme například krásnou světelnou výstavu Signal Space - a to teda bylo wow.<br><br>
-
 Každopádně k tomu máme i video.
 </div>
 
 <div class="textbox bottombox">
 Teď si prosím pusť video a poté se vrhneme na naše online rande.<br><br>
-
 K tomu nám pomohou ikonky, které máš vpravo.
 </div>
 
-<!-- PROKLIK STRATEGIE -->
-
+<!-- STRATEGIE -->
 <a
 class="strategy-link"
 href="https://episkvorky.cz/"
@@ -200,11 +206,18 @@ target="_blank"
 rel="noopener noreferrer">
 </a>
 
-<!-- PROKLIK HERNÍ OVLADAČ -->
-
+<!-- HERNÍ OVLADAČ -->
 <a
 class="game-link"
 href="https://www.crazygames.com/cz/multiplayer/2?tab=with-friends"
+target="_blank"
+rel="noopener noreferrer">
+</a>
+
+<!-- FILMOVÁ KLAPKA -->
+<a
+class="video-link"
+href="https://photos.app.goo.gl/bzKgfi5wFfPfr5Gt7"
 target="_blank"
 rel="noopener noreferrer">
 </a>
@@ -219,27 +232,21 @@ const hero=document.getElementById("hero");
 /* KONFETY */
 
 for(let i=0;i<70;i++){
-
 const confetti=document.createElement("div");
-
 confetti.className="confetti";
 confetti.style.left=Math.random()*100+"%";
 confetti.style.backgroundColor=colors[Math.floor(Math.random()*colors.length)];
 confetti.style.animationDuration=(3+Math.random()*4)+"s";
-
 hero.appendChild(confetti);
 }
 
 /* SRDÍČKA */
 
 for(let i=0;i<25;i++){
-
 const heart=document.createElement("div");
-
 heart.className="heart";
 heart.style.left=Math.random()*100+"%";
 heart.style.animationDuration=(4+Math.random()*4)+"s";
-
 hero.appendChild(heart);
 }
 
